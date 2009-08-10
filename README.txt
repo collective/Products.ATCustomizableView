@@ -76,6 +76,6 @@ __ http://www.plone.it/scopri/documentazione/how-to/controllo-at-default-view-in
 TODO
 ----
 
-* Just think about leave the old ZMI property approach and move on some other technology
-  like Zope3 interfaces, annotations, ...
+* What about leave the old ZMI property approach and move to some other technology
+  like Zope3 interfaces, annotations, ?
 * In any case give to the user a Plone form for managing per-object configuration.

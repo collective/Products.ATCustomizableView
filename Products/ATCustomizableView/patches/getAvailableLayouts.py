@@ -10,7 +10,10 @@ def cvGetAvailableLayouts(self):
     Also ignore basic layout if the purge_basic_layouts property is set.
     """
     purge_basic_layouts = self.getProperty('purge_basic_layouts', False)
-    fixed_additional_layouts = self.getProperty('fixed_additional_layouts', [])
+    fixed_additional_layouts = self.getProperty('fixed_additional_layouts', None)
+    if fixed_additional_layouts is None:
+        # Even if empty, I wanna fixed_additional_layouts to be required
+        return originalGetAvailableLayouts(self)
     if purge_basic_layouts:
         basic_layouts = []
     else:
