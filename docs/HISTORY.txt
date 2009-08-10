@@ -1,6 +1,16 @@
 Changes
 =======
 
+0.2.0
+-----
+
+ * No more Plone 2.5 support.
+ * No more ugly-old-style monkey patch, but now `collective.monkeypatcher`__
+   is required. [keul]
+ * Added controls on selectable views. [keul]
+
+__ http://pypi.python.org/pypi/collective.monkeypatcher/
+
 0.1.0
 -----
 
