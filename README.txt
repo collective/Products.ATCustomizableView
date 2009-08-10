@@ -26,14 +26,14 @@ to *True*.
 
 All those features can be very useful on many Plone sites.
 
- * You can set a (non standard?) view to a single content and make the user not able
-   to change your choice.
- * You can force a stardard view on a content, but again make users not able to change
-   this.
- * You can develop a new view compatible with some content type, but can choice to not
-   make it avaiable for all content types of the portal. Instead of force this new view
-   to the content you can leave again the choice to the power user that normally manage
-   the "views" menu.
+* You can set a (non standard?) view to a single content and make the user not able
+  to change your choice.
+* You can force a stardard view on a content, but again make users not able to change
+  this.
+* You can develop a new view compatible with some content type, but can choice to not
+  make it avaiable for all content types of the portal. Instead of force this new view
+  to the content you can leave again the choice to the power user that normally manage
+  the "views" menu.
 
 Without this product, too often a Plone developer is forced to develop new, silly content
 types just for only provide different views policy.
@@ -73,3 +73,9 @@ This `first version`__ of the product has been written related to a
 __ http://pypi.python.org/pypi/Products.ATCustomizableView/0.1.0
 __ http://www.plone.it/scopri/documentazione/how-to/controllo-at-default-view-in-plone
 
+TODO
+----
+
+* Just think about leave the old ZMI property approach and move on some other technology
+  like Zope3 interfaces, annotations, ...
+* In any case give to the user a Plone form for managing per-object configuration.
