@@ -1,6 +1,12 @@
 Changes
 =======
 
+0.3.0 (Unreleased)
+------------------
+
+* egg cleanup [keul]
+* fixed dependency in the product [keul]
+
 0.2.0
 -----
 

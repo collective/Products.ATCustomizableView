@@ -3,7 +3,7 @@
     xmlns:monkey="http://namespaces.plone.org/monkey"
     i18n_domain="collective.monkeypatcher">
 
-    <include package="collective.monkeypatcher" file="meta.zcml" />
+    <include package="collective.monkeypatcher" />
 
     <monkey:patch
      description="canSetLayout method now support the fixed_layout property"

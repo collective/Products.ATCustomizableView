@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.2.0'
+version = '0.3.0dev'
 
 setup(name='Products.ATCustomizableView',
       version=version,
@@ -17,8 +17,8 @@ setup(name='Products.ATCustomizableView',
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='plone atct default-view layout',
-      author='Keul (Luca Fabbri)',
-      author_email='luca.fabbri@redturtle.net',
+      author='keul',
+      author_email='luca@keul.it',
       url='http://svn.plone.org/svn/collective/Products.ATCustomizableView',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
@@ -27,9 +27,11 @@ setup(name='Products.ATCustomizableView',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          # -*- Extra requirements: -*-
+          'collective.monkeypatcher',
       ],
       entry_points="""
       # -*- Entry points: -*-
+      [z3c.autoinclude.plugin]
+      target = plone
       """,
       )
