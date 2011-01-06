@@ -7,13 +7,14 @@ version = '0.3.0dev'
 
 setup(name='Products.ATCustomizableView',
       version=version,
-      description="A Plone product that change the standard Plone behaviour of the views menu",
+      description='A Plone product that change the standard Plone behaviour of the "View" menu',
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Framework :: Plone",
         "Programming Language :: Python",
+        "Development Status :: 4 - Beta",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='plone atct default-view layout',

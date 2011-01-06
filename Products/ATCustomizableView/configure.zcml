@@ -3,6 +3,13 @@
     xmlns:five="http://namespaces.zope.org/five"
     i18n_domain="Products.ATCustomizableView">
 
+    <include package="collective.monkeypatcher" />
+	
+    <permission
+        id="Products.ATCustomizeView.customize"
+        title="Customize menu: view"
+     />
+
 	<include file="patches.zcml" />
 
 </configure>

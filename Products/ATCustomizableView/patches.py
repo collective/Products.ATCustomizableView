@@ -2,6 +2,21 @@
 
 import zope.component
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
+from Products.ATCustomizableView.interfaces import ICustomViewMenuLayer
+
+originalCanSetDefaultPage = BrowserDefaultMixin.canSetDefaultPage
+
+def cvCanSetDefaultPage(self):
+    if ICustomViewMenuLayer.providedBy(self.REQUEST) and self.getProperty('fixed_layout', False):
+        return False
+    return originalCanSetDefaultPage(self)
+
+originalCanSetLayout = BrowserDefaultMixin.canSetLayout
+
+def cvCanSetLayout(self):
+    if ICustomViewMenuLayer.providedBy(self.REQUEST) and self.getProperty('fixed_layout', False):
+        return False
+    return originalCanSetLayout(self)
 
 originalGetAvailableLayouts = BrowserDefaultMixin.getAvailableLayouts
 
@@ -9,6 +24,9 @@ def cvGetAvailableLayouts(self):
     """Add any additional available layouts listed in the fixed_additional_layouts property
     Also ignore basic layout if the purge_basic_layouts property is set.
     """
+    if not ICustomViewMenuLayer.providedBy(self.REQUEST):
+         return originalGetAvailableLayouts(self)
+
     purge_basic_layouts = self.getProperty('purge_basic_layouts', False)
     fixed_additional_layouts = self.getProperty('fixed_additional_layouts', None)
     if fixed_additional_layouts is None:

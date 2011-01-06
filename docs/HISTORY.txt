@@ -4,11 +4,13 @@ Changes
 0.3.0 (Unreleased)
 ------------------
 
-* egg cleanup [keul]
-* fixed dependency in the product [keul]
+* Egg cleanup [keul]
+* Fixed dependency in the product [keul]
+* Product is now installable [keul]
+* Do not apply patches if the product is not installed [keul] 
 
-0.2.0
------
+0.2.0 (2009-08-11)
+------------------
 
 * Forget Plone 2.5 support.
 * No more ugly-old-style monkey patch, but now `collective.monkeypatcher`__
@@ -17,7 +19,7 @@ Changes
 
 __ http://pypi.python.org/pypi/collective.monkeypatcher/
 
-0.1.0
------
+0.1.0 (2009-02-07)
+------------------
 
  * Initial releases

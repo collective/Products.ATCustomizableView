@@ -1,0 +1,14 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:five="http://namespaces.zope.org/five">
+
+  <browser:page
+      for="OFS.interfaces.IFolder"
+      name="customize-viewmenu"
+      class=".view.CustomizeViewMenu"
+      permission="Products.ATCustomizeView.customize"
+      allowed_attributes="getSavedCustomizations"
+      layer="..interfaces.ICustomViewMenuLayer"
+      />
+
+</configure>

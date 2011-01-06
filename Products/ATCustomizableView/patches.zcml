@@ -1,15 +1,13 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:monkey="http://namespaces.plone.org/monkey"
-    i18n_domain="collective.monkeypatcher">
-
-    <include package="collective.monkeypatcher" />
+    i18n_domain="Products.ATCustomizableView">
 
     <monkey:patch
      description="canSetLayout method now support the fixed_layout property"
      class="Products.CMFDynamicViewFTI.browserdefault.BrowserDefaultMixin"
      original="canSetLayout"
-     replacement=".patches.canSetLayout.cvCanSetLayout"
+     replacement=".patches.cvCanSetLayout"
      docstringWarning="true"
     />
 
@@ -17,7 +15,7 @@
      description="canSetDefaultPage method now support the fixed_layout property"
      class="Products.CMFDynamicViewFTI.browserdefault.BrowserDefaultMixin"
      original="canSetDefaultPage"
-     replacement=".patches.canSetDefaultPage.cvCanSetDefaultPage"
+     replacement=".patches.cvCanSetDefaultPage"
      docstringWarning="true"
     />
 
@@ -25,7 +23,7 @@
      description="getAvailableLayouts method now support advanced features"
      class="Products.CMFDynamicViewFTI.browserdefault.BrowserDefaultMixin"
      original="getAvailableLayouts"
-     replacement=".patches.getAvailableLayouts.cvGetAvailableLayouts"
+     replacement=".patches.cvGetAvailableLayouts"
      docstringWarning="true"
     />
 
