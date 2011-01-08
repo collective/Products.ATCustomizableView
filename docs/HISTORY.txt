@@ -8,6 +8,7 @@ Changes
 * Fixed dependency in the product [keul]
 * Product is now installable [keul]
 * Do not apply patches if the product is not installed [keul] 
+* Added friendly Plone UI for managing configurations [keul]
 
 0.2.0 (2009-08-11)
 ------------------

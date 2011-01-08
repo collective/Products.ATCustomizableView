@@ -11,7 +11,63 @@
     <tal:main-macro metal:define-macro="main">
 	<div id="customizeUI">
 
-		TODO
+		<h1 class="documentFirstHeading"
+		    i18n:translate="title_customize_form">Customization of the View menu</h1>
+		
+		<p i18n:translate="help_customize_form">
+			From this form you can change some behaviour of the &quot;View&quot; menu
+			for your site authors.
+		</p>
+
+		<form method="POST"
+		      i18n:attributes="action string:${context/absolute_url}/@@customize-viewmenu">
+		      
+		<fieldset>
+			<legend i18n:translate="">Customization options</legend>
+			
+			<div class="field">
+				<input type="checkbox" id="fixed_layout" name="fixed_layout:boolean" value="1" />
+				<label for="fixed_layout" i18n:translate="">Freeze the content layout?</label>
+				<div class="formHelp" i18n:translate="help_fixed_layout">
+					Check this if you want that this content shows no &quot;View&quot;
+					menu at all.
+					This will be true also for authors that commonly can use the menu.
+					Layout of this content will be freezed.
+				</div>
+			</div>
+
+			<div class="field">
+				<label for="fixed_additional_layouts"
+				       i18n:translate="">Additional layouts</label><br/>
+				<div class="formHelp" i18n:translate="help_fixed_additional_layouts">
+					You can add there additional views to be added to the &quot;View&quot;
+					menu, one per line.
+					You can use this list to show additional valid layout for this content,
+					not commonly registered as view for all contents of this kind.
+				</div>
+				<textarea id="fixed_additional_layouts"
+				       name="fixed_additional_layouts:lines" ></textarea>
+			</div>
+
+			<div class="field">
+				<input type="checkbox" id="purge_basic_layouts"
+				       name="purge_basic_layouts:boolean" value="1" />
+				<label for="purge_basic_layouts" i18n:translate="">Drop basic layouts?</label>
+				<div class="formHelp" i18n:translate="help_purge_basic_layouts">
+					Commonly the &quot;Additional layouts&quot; options adds to the current,
+					set of content's layout new ones.
+					Check this to disable all common layout and display only the new ones you
+					added above.
+				</div>
+			</div>
+
+			<div class="visualClear">&nbsp;</div>
+			<input type="submit" class="context" name="save" value="Save" 
+			       i18n:attributes="value" />
+
+		</fieldset>
+			  
+		</form>
 
 	</div>
     </tal:main-macro>

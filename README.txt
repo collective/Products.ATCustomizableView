@@ -1,11 +1,8 @@
-Products.ATCustomizableView
-===========================
-
 Overview
---------
+========
 
-A simple Plone product based on monkeypatch to enhance a little the basic Plone control
-on the default view of contents.
+A simple Plone product that monkeypatch Plone controls on the "View" menu of site contents.
+
 Applying some Zope properties to contents you can enhance (or limit) the power of users
 able to manage views.
 
@@ -16,7 +13,7 @@ When this is done, users can't change the default view (or select folder content
 default view) on this object.
 Removing this property (or set this to **False**) will restore normal behaviour.
 
-Again, you can add custom, addition view to a single content. You only need to a new
+Again, you can add custom, additional view to a single content. You only need to a new
 (lines) property called **fixed_additional_layouts** to the content. Every additional
 views on this list will be added to basic views avaiable.
 
@@ -38,43 +35,8 @@ All those features can be very useful on many Plone sites.
 Without this product, too often a Plone developer is forced to develop new, silly content
 types just for only provide different views policy.
 
-Requirements
-------------
-
-Monkeypatch approach is dangerous, `collective.monkeypatcher`__ is now required in
-your buildout.
-
-__ http://pypi.python.org/pypi/collective.monkeypatcher/
-
-::
-
-    [instance]
-    ...
-    eggs =
-        ...
-        Products.ATCustomizableView
-        collective.monkeypatcher
-        collective.monkeypatcherpanel
-    ...
-    
-    zcml =
-        ...
-        Products.ATCustomizableView
-        collective.monkeypatcher
-        collective.monkeypatcherpanel
-    ...
-
-Tutorial
---------
-
-This `first version`__ of the product has been written related to a
-`tutorial on Plone.it`__ (italian language!).
-
-__ http://pypi.python.org/pypi/Products.ATCustomizableView/0.1.0
-__ http://www.plone.it/scopri/documentazione/how-to/controllo-at-default-view-in-plone
-
 TODO
-----
+====
 
 * What about leave the old ZMI property approach and move to some other technology
   like Zope3 interfaces, annotations, ?
