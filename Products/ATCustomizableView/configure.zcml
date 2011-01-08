@@ -1,15 +1,27 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="Products.ATCustomizableView">
 
     <include package="collective.monkeypatcher" />
-	
+
     <permission
         id="Products.ATCustomizeView.customize"
         title="Customize menu: view"
      />
 
+    <include package=".browser" />
 	<include file="patches.zcml" />
+
+  <!-- Register the installation GenericSetup extension profile -->
+  <genericsetup:registerProfile
+      name="default"
+      title="Customize the View menu"
+      directory="profiles/default"
+      description="Product for beeing able to customize the View menu"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
 
 </configure>

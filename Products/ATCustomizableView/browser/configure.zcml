@@ -5,7 +5,7 @@
   <browser:page
       for="OFS.interfaces.IFolder"
       name="customize-viewmenu"
-      class=".view.CustomizeViewMenu"
+      class=".view.CustomizeViewMenuView"
       permission="Products.ATCustomizeView.customize"
       allowed_attributes="getSavedCustomizations"
       layer="..interfaces.ICustomViewMenuLayer"
