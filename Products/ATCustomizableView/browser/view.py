@@ -27,6 +27,43 @@ class CustomizeViewMenuView(BrowserView):
             return
         return self.template()
     
+    def values(self):
+        """Get the values to be displayed in the form"""
+        form = self.request.form
+        context = self.context
+        values = {
+                  'fixed_layout': form.get('fixed_layout') or context.getProperty('fixed_layout') or False,
+                  'fixed_additional_layouts': form.get('fixed_additional_layouts') or context.getProperty('fixed_additional_layouts') or [], 
+                  'purge_basic_layouts': form.get('purge_basic_layouts') or context.getProperty('purge_basic_layouts') or False,
+                  }
+        return values
+    
     def _save(self, form):
-        """Save customization chages"""
+        """Save customization chages.
+        This method remove empty values so the uninstallation of the product is simpler.
+        """
+        context = self.context
+        if form.get('fixed_layout'):
+            if not context.hasProperty('fixed_layout'):
+                context.manage_addProperty('fixed_layout', True, 'boolean')
+        else:
+            if context.hasProperty('fixed_layout'):
+                context.manage_delProperties(ids=['fixed_layout'])
+        if [x for x in form.get('fixed_additional_layouts') if x]:
+            if not context.hasProperty('fixed_additional_layouts'):
+                context.manage_addProperty('fixed_additional_layouts', form.get('fixed_additional_layouts'), 'lines')
+            else:
+                context.manage_changeProperties({'fixed_additional_layouts': form.get('fixed_additional_layouts')})
+        else:
+            if context.hasProperty('fixed_additional_layouts'):
+                context.manage_delProperties(ids=['fixed_additional_layouts'])
+        if form.get('purge_basic_layouts'):
+            if not context.hasProperty('purge_basic_layouts'):
+                context.manage_addProperty('purge_basic_layouts', True, 'boolean')
+        else:
+            if context.hasProperty('purge_basic_layouts'):
+                context.manage_delProperties(ids=['purge_basic_layouts'])
+            
+
+
         

@@ -3,6 +3,8 @@
     xmlns:monkey="http://namespaces.plone.org/monkey"
     i18n_domain="Products.ATCustomizableView">
 
+    <include package="collective.monkeypatcher" />
+
     <monkey:patch
      description="canSetLayout method now support the fixed_layout property"
      class="Products.CMFDynamicViewFTI.browserdefault.BrowserDefaultMixin"

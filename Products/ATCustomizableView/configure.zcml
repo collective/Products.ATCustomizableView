@@ -2,9 +2,10 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="Products.ATCustomizableView">
 
-    <include package="collective.monkeypatcher" />
+    <i18n:registerTranslations directory="locales" />
 
     <permission
         id="Products.ATCustomizeView.customize"

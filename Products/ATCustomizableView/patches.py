@@ -2,19 +2,22 @@
 
 import zope.component
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
+from Products.CMFCore.utils import getToolByName
 from Products.ATCustomizableView.interfaces import ICustomViewMenuLayer
 
 originalCanSetDefaultPage = BrowserDefaultMixin.canSetDefaultPage
 
 def cvCanSetDefaultPage(self):
-    if ICustomViewMenuLayer.providedBy(self.REQUEST) and self.getProperty('fixed_layout', False):
+    member = getToolByName(self, 'portal_membership').getAuthenticatedMember()
+    if ICustomViewMenuLayer.providedBy(self.REQUEST) and self.getProperty('fixed_layout', False) and not member.has_permission('Customize the View menu', self):
         return False
     return originalCanSetDefaultPage(self)
 
 originalCanSetLayout = BrowserDefaultMixin.canSetLayout
 
 def cvCanSetLayout(self):
-    if ICustomViewMenuLayer.providedBy(self.REQUEST) and self.getProperty('fixed_layout', False):
+    member = getToolByName(self, 'portal_membership').getAuthenticatedMember()
+    if ICustomViewMenuLayer.providedBy(self.REQUEST) and self.getProperty('fixed_layout', False) and not member.has_permission('Customize the View menu', self):
         return False
     return originalCanSetLayout(self)
 

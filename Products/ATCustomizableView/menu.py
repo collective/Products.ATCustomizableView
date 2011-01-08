@@ -9,6 +9,7 @@ from OFS.interfaces import IFolder
 from plone.app.contentmenu.menu import DisplayMenu as PloneDisplayMenu
 from plone.app.contentmenu.interfaces import IDisplayMenu
 
+from Products.CMFCore.utils import getToolByName
 from Products.ATCustomizableView import custommenuMessageFactory as _
 from Products.ATCustomizableView.interfaces import ICustomViewMenuLayer
 
@@ -34,7 +35,9 @@ class DisplayMenu(PloneDisplayMenu):
             else:
                 # don't know how to handle this
                 folder = context
-    
+
+        member = getToolByName(context, 'portal_membership').getAuthenticatedMember()
+        if member.has_permission('Customize the View menu', context):
             results.append({ 'title' : _(u'label_customization', default=u'Customize menu'),
                      'description'   : _(u'help_customization', default=u'Freeze, change or add menu entries'),
                      'action'        : folder.absolute_url()+'/@@customize-viewmenu',
