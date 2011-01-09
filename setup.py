@@ -3,11 +3,11 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.3.0'
+version = '0.3.1dev'
 
 setup(name='Products.ATCustomizableView',
       version=version,
-      description='A Plone product that change the standard Plone behaviour of the "View" menu',
+      description='A Plone product that change the standard Plone behaviour of the "Display" menu',
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
