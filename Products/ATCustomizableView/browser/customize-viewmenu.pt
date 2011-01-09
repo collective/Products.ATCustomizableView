@@ -12,7 +12,7 @@
 	<div id="customizeUI">
 
 		<h1 class="documentFirstHeading"
-		    i18n:translate="title_customize_form">Customization of the View menu</h1>
+		    i18n:translate="title_customize_form">Customization of the &quot;Display&quot; menu</h1>
 
         <a href=""
          class="link-parent"
@@ -23,7 +23,7 @@
         </a>
 
 		<p i18n:translate="help_customize_form">
-			From this form you can change some behaviour of the &quot;View&quot; menu
+			From this form you can change some behaviour of the &quot;Display&quot; menu
 			for your site authors.
 		</p>
 
@@ -39,7 +39,7 @@
 				       tal:attributes="checked python:values['fixed_layout'] and True or False;"/>
 				<label for="fixed_layout" i18n:translate="">Freeze the content layout?</label>
 				<div class="formHelp" i18n:translate="help_fixed_layout">
-					Check this if you want that this content shows no &quot;View&quot;
+					Check this if you want that this content shows no &quot;Display&quot;
 					menu at all.
 					This will be true for authors that commonly can use the menu.
 					In brief: layout of this content will be freezed.
@@ -50,7 +50,7 @@
 				<label for="fixed_additional_layouts"
 				       i18n:translate="">Additional layouts</label><br/>
 				<div class="formHelp" i18n:translate="help_fixed_additional_layouts">
-					You can add there additional views to be added to the &quot;View&quot;
+					You can add there additional views to be added to the &quot;Display&quot;
 					menu, one per line.
 					You can use this list to show additional valid layout for this content,
 					not commonly registered as view for all contents of this kind.

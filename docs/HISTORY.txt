@@ -1,7 +1,7 @@
 Changes
 =======
 
-0.3.0 (Unreleased)
+0.3.0 (2011-01-09)
 ------------------
 
 * Egg cleanup [keul]
@@ -10,6 +10,7 @@ Changes
 * Do not apply patches if the product is not installed [keul] 
 * Added friendly Plone UI for managing configurations [keul]
 * Translations (for now in Italian, other are welcome) [keul]
+* Tested also on Plone 4 [keul]
 
 0.2.0 (2009-08-11)
 ------------------

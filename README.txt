@@ -1,43 +1,56 @@
-Overview
-========
+Introduction
+============
 
-A simple Plone product that monkeypatch Plone controls on the "View" menu of site contents.
+This product can change the behaviour of the Plone's "*Display*" menu, making it a little
+customizable. Those customization are *not* content type related, but are done for a
+single content.
 
-Applying some Zope properties to contents you can enhance (or limit) the power of users
-able to manage views.
+For every specific content of the portal:
 
-For every content of the portal you can block the user ability to change layouts on a
-single document/folder, instead of having this feature only for the whole content-class.
-This is simply done adding a new boolean property (**fixed_layout**) set to *True*.
-When this is done, users can't change the default view (or select folder contents as
-default view) on this object.
-Removing this property (or set this to **False**) will restore normal behaviour.
+* You can block ability of your authors to change content's layouts.
+* You can add custom, additional, views to a content.
+* You can hide all standard available layout for a content, leaving only the new customized
+  ones.
 
-Again, you can add custom, additional view to a single content. You only need to a new
-(lines) property called **fixed_additional_layouts** to the content. Every additional
-views on this list will be added to basic views avaiable.
+.. image:: http://keul.it/images/plone/Products.ATCustomizableView-0.3.0-01.png
+   :alt: The menu customization form
 
-Of course you can block and not inherits default views but use only the news ones.
-To do this just add another (boolean) property called **purge_basic_layouts** and set it
-to *True*.
+User cases
+----------
 
-All those features can be very useful on many Plone sites.
+ `Why freeze the content layout?`
+     Sometimes you need to apply a new view to a single content, like a folder.
+     For example: you have a folder where you know is used only for *News Item* contents
+     and you have a quite good view for this folder.
+     
+     Registering this view for all Folder content types will give to your author the choice
+     to use this view also in other section of the site, but you don't want it.
+     A views pollution in the "*Display*" menu can be confusing.
+ `Why adding new entry in the menu`
+     Keep in mind that you are adding new views to a single content of your site.
+     
+     For example: you have developed a new view for the *Page* and you want optionally leave
+     to your authors to use or not this view in the home-page sub-sections of your site.
+     
+     Like above, registering this view for the Page content types will leave to authors the
+     choice to use this view for *all* page of the site but, for design choice, you want to
+     use this view only for some specific pages. 
+ `Why dropping base views`
+     No much to say, may be you don't want to inherit the content types views and don't want
+     that your authors are able to use them.
 
-* You can set a (non standard?) view to a single content and make the user not able
-  to change your choice.
-* You can force a stardard view on a content, but again make users not able to change
-  this.
-* You can develop a new view compatible with some content type, but can choice to not
-  make it avaiable for all content types of the portal. Instead of force this new view
-  to the content you can leave again the choice to the power user that normally manage
-  the "views" menu.
+Simplification for developers
+-----------------------------
 
-Without this product, too often a Plone developer is forced to develop new, silly content
-types just for only provide different views policy.
+Behaviour described above can be reach also developing additional content types. However I found
+not very useful developing silly content type or marker interfaces only for obtaining additional
+layout.
 
 TODO
 ====
 
-* What about leave the old ZMI property approach and move to some other technology
-  like Zope3 interfaces, annotations, ?
-* In any case give to the user a Plone form for managing per-object configuration.
+* Thinking about moving to the approach used for `redturtle.custommenu.factories`__, as soon as
+  the per-object menu customization will be moved out of the product.
+
+__ http://plone.org/products/redturtle.custommenu.factories
+

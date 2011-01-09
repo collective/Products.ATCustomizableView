@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-01-08 20:59+0000\n"
+"POT-Creation-Date: 2011-01-09 14:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,17 +52,17 @@ msgstr ""
 msgid "help_customization"
 msgstr ""
 
-#. Default: "From this form you can change some behaviour of the \"View\" menu for your site authors."
+#. Default: "From this form you can change some behaviour of the \"Display\" menu for your site authors."
 #: ./browser/customize-viewmenu.pt:25
 msgid "help_customize_form"
 msgstr ""
 
-#. Default: "You can add there additional views to be added to the \"View\" menu, one per line. You can use this list to show additional valid layout for this content, not commonly registered as view for all contents of this kind."
+#. Default: "You can add there additional views to be added to the \"Display\" menu, one per line. You can use this list to show additional valid layout for this content, not commonly registered as view for all contents of this kind."
 #: ./browser/customize-viewmenu.pt:52
 msgid "help_fixed_additional_layouts"
 msgstr ""
 
-#. Default: "Check this if you want that this content shows no \"View\" menu at all. This will be true for authors that commonly can use the menu. In brief: layout of this content will be freezed."
+#. Default: "Check this if you want that this content shows no \"Display\" menu at all. This will be true for authors that commonly can use the menu. In brief: layout of this content will be freezed."
 #: ./browser/customize-viewmenu.pt:41
 msgid "help_fixed_layout"
 msgstr ""
@@ -77,7 +77,7 @@ msgstr ""
 msgid "label_customization"
 msgstr ""
 
-#. Default: "Customization of the View menu"
+#. Default: "Customization of the \"Display\" menu"
 #: ./browser/customize-viewmenu.pt:14
 msgid "title_customize_form"
 msgstr ""
