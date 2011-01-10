@@ -36,16 +36,16 @@ class DisplayMenu(PloneDisplayMenu):
                 # don't know how to handle this
                 folder = context
 
-        member = getToolByName(context, 'portal_membership').getAuthenticatedMember()
-        if member.has_permission('Customize the View menu', context):
-            results.append({ 'title' : _(u'label_customization', default=u'Customize menu'),
-                     'description'   : _(u'help_customization', default=u'Freeze, change or add menu entries'),
-                     'action'        : folder.absolute_url()+'/@@customize-viewmenu',
-                     'selected'      : False,
-                     'icon'          : None,
-                     'extra'         : {'id': 'customizeViewMenu', 'separator': 'actionSeparator', 'class': ''},
-                     'submenu'       : None,
-                     })
+            member = getToolByName(context, 'portal_membership').getAuthenticatedMember()
+            if member.has_permission('Customize the View menu', context):
+                results.append({ 'title' : _(u'label_customization', default=u'Customize menu'),
+                         'description'   : _(u'help_customization', default=u'Freeze, change or add menu entries'),
+                         'action'        : folder.absolute_url()+'/@@customize-viewmenu',
+                         'selected'      : False,
+                         'icon'          : None,
+                         'extra'         : {'id': 'customizeViewMenu', 'separator': 'actionSeparator', 'class': ''},
+                         'submenu'       : None,
+                         })
         
         return results
 

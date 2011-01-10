@@ -1,10 +1,10 @@
 Changes
 =======
 
-0.3.1 (Unreleased)
+0.3.1 (2010-01-10)
 ------------------
 
-* ...
+* Bad identation; menu will raise error if the product is not installed [keul]
 
 0.3.0 (2011-01-09)
 ------------------
