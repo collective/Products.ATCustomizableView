@@ -46,6 +46,17 @@ Behaviour described above can be reach also developing additional content types.
 not very useful developing silly content type or marker interfaces only for obtaining additional
 layout.
 
+If you like more older versions of ATCustomizableView
+-----------------------------------------------------
+
+I got some criticism about releases of ATCustomizableView that started to display Plone UI, even if
+those changes were in the TODO for a long time.
+
+If you liked older versions, were you were forced to go to ZMI, simply remove to *all user roles* the
+*Customize menu: view* permission. Also to Manager.
+
+No you can continue working only using ZMI properties tab!
+
 TODO
 ====
 

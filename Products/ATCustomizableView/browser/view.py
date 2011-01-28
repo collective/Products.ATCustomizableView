@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from OFS.interfaces import IFolder
+
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
@@ -27,6 +29,17 @@ class CustomizeViewMenuView(BrowserView):
             return
         return self.template()
     
+    def isFolder(self):
+        return IFolder.providedBy(self.context)
+    
+    @property
+    def layout(self):
+        return self.context.getProperty('layout', '')
+
+    @property
+    def default_page(self):
+        return self.context.getProperty('default_page', '')
+  
     def values(self):
         """Get the values to be displayed in the form"""
         form = self.request.form
