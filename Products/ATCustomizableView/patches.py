@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import zope.component
+
+from zope.app.publisher.interfaces.browser import IBrowserMenu
+
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from Products.CMFCore.utils import getToolByName
 from Products.ATCustomizableView.interfaces import ICustomViewMenuLayer
