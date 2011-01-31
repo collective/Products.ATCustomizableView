@@ -9,7 +9,7 @@ originalCanSetDefaultPage = BrowserDefaultMixin.canSetDefaultPage
 
 def cvCanSetDefaultPage(self):
     member = getToolByName(self, 'portal_membership').getAuthenticatedMember()
-    if ICustomViewMenuLayer.providedBy(self.REQUEST) and self.getProperty('fixed_layout', False) and not member.has_permission('Customize the View menu', self):
+    if ICustomViewMenuLayer.providedBy(self.REQUEST) and self.getProperty('fixed_layout', False) and not member.has_permission('Customize menu: view', self):
         return False
     return originalCanSetDefaultPage(self)
 
@@ -17,7 +17,7 @@ originalCanSetLayout = BrowserDefaultMixin.canSetLayout
 
 def cvCanSetLayout(self):
     member = getToolByName(self, 'portal_membership').getAuthenticatedMember()
-    if ICustomViewMenuLayer.providedBy(self.REQUEST) and self.getProperty('fixed_layout', False) and not member.has_permission('Customize the View menu', self):
+    if ICustomViewMenuLayer.providedBy(self.REQUEST) and self.getProperty('fixed_layout', False) and not member.has_permission('Customize menu: view', self):
         return False
     return originalCanSetLayout(self)
 

@@ -6,8 +6,11 @@ from zope.component import getMultiAdapter
 
 from OFS.interfaces import IFolder
 
+from plone.memoize.instance import memoize
+
 from plone.app.contentmenu.menu import DisplayMenu as PloneDisplayMenu
-from plone.app.contentmenu.interfaces import IDisplayMenu
+from plone.app.contentmenu.menu import DisplaySubMenuItem as PloneDisplaySubMenuItem
+from plone.app.contentmenu.interfaces import IDisplayMenu, IDisplaySubMenuItem
 
 from Products.CMFCore.utils import getToolByName
 from Products.ATCustomizableView import custommenuMessageFactory as _
@@ -37,7 +40,7 @@ class DisplayMenu(PloneDisplayMenu):
                 folder = context
 
             member = getToolByName(context, 'portal_membership').getAuthenticatedMember()
-            if member.has_permission('Customize the View menu', context):
+            if member.has_permission('Customize menu: view', context):
                 results.append({ 'title' : _(u'label_customization', default=u'Customize menu'),
                          'description'   : _(u'help_customization', default=u'Freeze, change or add menu entries'),
                          'action'        : folder.absolute_url()+'/@@customize-viewmenu',
@@ -48,4 +51,17 @@ class DisplayMenu(PloneDisplayMenu):
                          })
         
         return results
+
+
+class DisplaySubMenuItem(PloneDisplaySubMenuItem):
+    implements(IDisplaySubMenuItem)
+    
+    @memoize
+    def available(self):
+        context = self.context
+        member = getToolByName(context, 'portal_membership').getAuthenticatedMember()
+        if member.has_permission('Customize menu: view', context):
+            return True
+    
+        return PloneDisplaySubMenuItem.available(self)
 

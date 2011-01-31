@@ -5,22 +5,27 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="Products.ATCustomizableView">
 
-    <i18n:registerTranslations directory="locales" />
+  <i18n:registerTranslations directory="locales" />
 
-    <permission
-        id="Products.ATCustomizeView.customize"
-        title="Customize menu: view"
+  <permission
+     id="Products.ATCustomizeView.customize"
+     title="Customize menu: view"
      />
 
-    <include package=".browser" />
-	<include file="patches.zcml" />
+  <include package=".browser" />
+  <include file="patches.zcml" />
+  
+  <adapter for="* Products.ATCustomizableView.interfaces.ICustomViewMenuLayer"
+           name="plone.contentmenu.display"
+           factory=".menu.DisplaySubMenuItem"
+           provides="plone.app.contentmenu.interfaces.IContentMenuItem" />
 
   <!-- Register the installation GenericSetup extension profile -->
   <genericsetup:registerProfile
       name="default"
-      title="Customize the View menu"
+      title="Customize the Display menu"
       directory="profiles/default"
-      description="Product for beeing able to customize the View menu"
+      description="Product for beeing able to change some behaviour of the Display menu"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 

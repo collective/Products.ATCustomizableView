@@ -3,7 +3,7 @@
            xmlns:five="http://namespaces.zope.org/five">
 
   <browser:page
-      for="OFS.interfaces.IFolder"
+      for="Products.CMFDynamicViewFTI.browserdefault.BrowserDefaultMixin"
       name="customize-viewmenu"
       class=".view.CustomizeViewMenuView"
       permission="Products.ATCustomizeView.customize"

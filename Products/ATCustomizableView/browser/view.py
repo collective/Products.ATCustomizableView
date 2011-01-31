@@ -29,16 +29,15 @@ class CustomizeViewMenuView(BrowserView):
             return
         return self.template()
     
+    def back_url(self):
+        """Calc the back_url, so is less confusing"""
+        context = self.context
+        if context.hasProperty('default_page'):
+            return context.absolute_url() + '/' + context.getProperty('default_page')
+        return context.absolute_url() + '/view'
+    
     def isFolder(self):
         return IFolder.providedBy(self.context)
-    
-    @property
-    def layout(self):
-        return self.context.getProperty('layout', '')
-
-    @property
-    def default_page(self):
-        return self.context.getProperty('default_page', '')
   
     def values(self):
         """Get the values to be displayed in the form"""
@@ -48,6 +47,8 @@ class CustomizeViewMenuView(BrowserView):
                   'fixed_layout': form.get('fixed_layout') or context.getProperty('fixed_layout') or False,
                   'fixed_additional_layouts': form.get('fixed_additional_layouts') or context.getProperty('fixed_additional_layouts') or [], 
                   'purge_basic_layouts': form.get('purge_basic_layouts') or context.getProperty('purge_basic_layouts') or False,
+                  'layout': form.get('layout') or self.context.getProperty('layout') or '',
+                  'default_page': form.get('default_page') or self.context.getProperty('default_page', '') or '',
                   }
         return values
     
@@ -56,12 +57,14 @@ class CustomizeViewMenuView(BrowserView):
         This method remove empty values so the uninstallation of the product is simpler.
         """
         context = self.context
+
         if form.get('fixed_layout'):
             if not context.hasProperty('fixed_layout'):
                 context.manage_addProperty('fixed_layout', True, 'boolean')
         else:
             if context.hasProperty('fixed_layout'):
                 context.manage_delProperties(ids=['fixed_layout'])
+
         if [x for x in form.get('fixed_additional_layouts') if x]:
             if not context.hasProperty('fixed_additional_layouts'):
                 context.manage_addProperty('fixed_additional_layouts', form.get('fixed_additional_layouts'), 'lines')
@@ -70,13 +73,31 @@ class CustomizeViewMenuView(BrowserView):
         else:
             if context.hasProperty('fixed_additional_layouts'):
                 context.manage_delProperties(ids=['fixed_additional_layouts'])
+
         if form.get('purge_basic_layouts'):
             if not context.hasProperty('purge_basic_layouts'):
                 context.manage_addProperty('purge_basic_layouts', True, 'boolean')
         else:
             if context.hasProperty('purge_basic_layouts'):
                 context.manage_delProperties(ids=['purge_basic_layouts'])
+
+        if form.get('layout'):
+            if not context.hasProperty('layout'):
+                context.manage_addProperty('layout', form.get('layout'), 'string')
+            else:
+                context.manage_changeProperties({'layout': form.get('layout')})
+        else:
+            if context.hasProperty('layout'):
+                context.manage_delProperties(ids=['layout'])
             
+        if form.get('default_page'):
+            if not context.hasProperty('default_page'):
+                context.manage_addProperty('default_page', form.get('default_page'), 'string')
+            else:
+                context.manage_changeProperties({'default_page': form.get('default_page')})
+        else:
+            if context.hasProperty('default_page'):
+                context.manage_delProperties(ids=['default_page'])
 
 
         

@@ -1,17 +1,18 @@
 Changes
 =======
 
-0.4.0 (Unreleased)
+0.4.0 (2011-01-31)
 ------------------
 
 * Removed a reference to unknow method "getSavedCustomizations".
   This remove a warning on Zope start-up [keul]
 * Added doc guide fo user that wanna to keep the ATCustomizable features only
   for ZMI [keul]
-* TODO - feature for changing layout and template [keul]
-* TODO - Customize menu view was not callable on non-folderish contents [keul]
+* Added a way for changing layout and template [keul]
+* Bad bug: the product was checking a wrong permission name [keul]
+* Customize menu view was not callable on non-folderish contents [keul]
 
-0.3.1 (2010-01-10)
+0.3.1 (2011-01-10)
 ------------------
 
 * Bad identation; menu will raise error if the product is not installed [keul]

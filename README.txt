@@ -12,7 +12,7 @@ For every specific content of the portal:
 * You can hide all standard available layout for a content, leaving only the new customized
   ones.
 
-.. image:: http://keul.it/images/plone/Products.ATCustomizableView-0.3.0-01.png
+.. image:: http://keul.it/images/plone/Products.ATCustomizableView-0.4.0-01.png
    :alt: The menu customization form
 
 User cases
@@ -49,13 +49,25 @@ layout.
 If you like more older versions of ATCustomizableView
 -----------------------------------------------------
 
-I got some criticism about releases of ATCustomizableView that started to display Plone UI, even if
-those changes were in the TODO for a long time.
+I got some (good) criticism about releases of ATCustomizableView that started to display Plone UI,
+even if those changes were in the TODO for a long time.
 
-If you liked older versions, were you were forced to go to ZMI, simply remove to *all user roles* the
+If you liked older versions, where you were forced to go to ZMI, simply remove to *all user roles* the
 *Customize menu: view* permission. Also to Manager.
 
-No you can continue working only using ZMI properties tab!
+After that you can continue working only using ZMI properties tab!
+
+Installation
+============
+
+Add "Products.ATCustomizableView" to the egg section of your buildout configuration file.
+
+For Plone versions 3.2 or lower, remember the zcml section::
+
+    zcml =
+        ...
+        Products.ATCustomizableView
+        Products.ATCustomizableView-overrides
 
 TODO
 ====

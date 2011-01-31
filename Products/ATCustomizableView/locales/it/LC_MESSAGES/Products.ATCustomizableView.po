@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-01-09 14:57+0000\n"
+"POT-Creation-Date: 2011-01-31 10:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: keul <luca@keul.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,68 +16,100 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: Products.ATCustomizableView\n"
 
-#: ./browser/customize-viewmenu.pt:50
+#: ../browser/customize-viewmenu.pt:92
 msgid "Additional layouts"
 msgstr "Viste aggiuntive"
 
-#: ./browser/view.py:25
+#: ../browser/view.py:27
 msgid "Changes saved"
 msgstr "Modifiche salvate"
 
-#: ./browser/customize-viewmenu.pt:35
+#: ../browser/customize-viewmenu.pt:53
+msgid "Current content layout"
+msgstr "Vista corrente"
+
+#: ../browser/customize-viewmenu.pt:72
+msgid "Current default page"
+msgstr "Pagina predefinita corrente"
+
+#: ../browser/customize-viewmenu.pt:38
 msgid "Customization options"
 msgstr "Personalizzazioni"
 
-msgid "Customize the View menu"
+msgid "Customize the Display menu"
 msgstr "Personalizzazione del menu' Vista"
 
-#: ./browser/customize-viewmenu.pt:67
+#: ../browser/customize-viewmenu.pt:109
 msgid "Drop basic layouts?"
 msgstr "Scartare le viste di base?"
 
-#: ./browser/customize-viewmenu.pt:40
+#: ../browser/customize-viewmenu.pt:43
 msgid "Freeze the content layout?"
 msgstr "Congelare la vista?"
 
-msgid "Product for beeing able to customize the View menu"
-msgstr "Prodotto per essere in grado di personalizzare il menu' Vista"
+msgid "Product for beeing able to change some behaviour of the Display menu"
+msgstr "Prodotto per poter cambiare qualche comportamento del menu' Vista"
 
-#: ./browser/customize-viewmenu.pt:77
+#: ../browser/customize-viewmenu.pt:119
 msgid "Save"
 msgstr "Salva"
 
 #. Default: "Freeze, change or add menu entries"
-#: ./menu.py:42
+#: ../menu.py:45
 msgid "help_customization"
 msgstr "Congela, cambia o aggiungi voci di menù"
 
 #. Default: "From this form you can change some behaviour of the \"Display\" menu for your site authors."
-#: ./browser/customize-viewmenu.pt:25
+#: ../browser/customize-viewmenu.pt:25
 msgid "help_customize_form"
 msgstr "Da questo modulo puoi modificare comportamenti del menù \"Vista\""
 
+#. Default: "Use this form only if you need some non-standard behaviour to Plone contents views."
+#: ../browser/customize-viewmenu.pt:29
+msgid "help_customize_form_warn"
+msgstr "Usa questo modulo solo se hai bisogno di qualche comportamento non-standard del menù vista di Plone."
+
+#. Default: "Here you can see the current sub-content used as default page for this section. If you provide both \"Current content layout\" and \"Current default page\" values, the default page wins."
+#: ../browser/customize-viewmenu.pt:75
+msgid "help_default_page"
+msgstr ""
+"Qui puoi vedere il sotto-contenuto corrente usato come pagina predefinita della sezione. \n"
+"Se fornisci sia \"Vista corrente\" che \"Pagina predefinita corrente\", la pagina predefinita ha la precedenza."
+
 #. Default: "You can add there additional views to be added to the \"Display\" menu, one per line. You can use this list to show additional valid layout for this content, not commonly registered as view for all contents of this kind."
-#: ./browser/customize-viewmenu.pt:52
+#: ../browser/customize-viewmenu.pt:94
 msgid "help_fixed_additional_layouts"
 msgstr "Puoi aggiungere viste addizionali al menù \"Vista\", una per riga. Puoi usare questa lista per visualizzare viste aggiuntive per questo contenuto, non comunemente registrate per tutti i contenuti di questo tipo."
 
 #. Default: "Check this if you want that this content shows no \"Display\" menu at all. This will be true for authors that commonly can use the menu. In brief: layout of this content will be freezed."
-#: ./browser/customize-viewmenu.pt:41
+#: ../browser/customize-viewmenu.pt:44
 msgid "help_fixed_layout"
 msgstr "Seleziona se vuoi che questo contenuto non mostri nessun menù \"Vista\". Questo succederà anche ai redattori che comunemente possono usare il menù. In breve: la vista viene congelata."
 
+#. Default: "Here you can see the current layout of this content. You can modifiy this id with whatever you think and you know can be used as a view for this content."
+#: ../browser/customize-viewmenu.pt:56
+msgid "help_layout1"
+msgstr ""
+"Qui puoi vedere la vista corrente di questo contenuto. \n"
+"Puoi modificare questo id con qualunque cosa tu pensi e tu sappia possa essere usata come vista per questo contenuto."
+
 #. Default: "Commonly the \"Additional layouts\" options adds to the current set of content's layout new ones. Check this to disable all common layout and display only the new ones you added above."
-#: ./browser/customize-viewmenu.pt:68
+#: ../browser/customize-viewmenu.pt:110
 msgid "help_purge_basic_layouts"
 msgstr "Comunemente l'opzione \"Viste aggiuntive\" aggiunge all'insieme corrente di viste disponibili delle nuove viste. Seleziona questo per disabilitare le viste predefinite e visualizzare solo quelle nuove definite sopra."
 
+#. Default: "Please, be sure of what you write below if you plan to change this value or you will be no more able to see the current content."
+#: ../browser/customize-viewmenu.pt:60
+msgid "help_warning"
+msgstr "Per favore, sii sicuro di cosa scrivi qui sotto se hai intenzione di cambiarne il valore o non sarai più in grado di vedere il contenuto."
+
 #. Default: "Customize menu"
-#: ./menu.py:41
+#: ../menu.py:44
 msgid "label_customization"
 msgstr "Personalizza il menù"
 
 #. Default: "Customization of the \"Display\" menu"
-#: ./browser/customize-viewmenu.pt:14
+#: ../browser/customize-viewmenu.pt:14
 msgid "title_customize_form"
 msgstr "Personalizzazione del menù \"Vista\""
 

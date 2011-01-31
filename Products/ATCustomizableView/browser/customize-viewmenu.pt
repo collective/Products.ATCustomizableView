@@ -16,7 +16,7 @@
 
         <a href=""
          class="link-parent"
-         tal:attributes="href string:${context/absolute_url}/view"
+         tal:attributes="href view/back_url"
 		 i18n:domain="plone"
          i18n:translate="return_to_view">
           Return
@@ -52,37 +52,39 @@
 			<div class="field">
 				<label for="layout"
 				       i18n:translate="">Current content layout</label><br/>
-				<div class="formHelp" i18n:translate="help_layout1">
+				<div class="formHelp">
+					<span tal_omit-tag="" i18n:translate="help_layout1">
 					Here you can see the current layout of this content. You can modifiy this
 					id with whatever you think and you know can be used as a view for this content.
-				</div>
-				<div class="formHelp">
-					<strong i18n:translate="help_layout2">
+					</span><br/>
+					<strong i18n:translate="help_warning">
 					Please, be sure of what you write below if you plan to change this value
 					or you will be no more able to see the current content.</strong>
 				</div>
 				<input id="layout"
 				       name="layout"
-					   tal:attributes="value view/layout"
+					   size="50"
+					   tal:attributes="value values/layout"
 					   />
 			</div>
 
 			<div class="field" tal:condition="view/isFolder">
 				<label for="default_page"
 				       i18n:translate="">Current default page</label><br/>
-				<div class="formHelp" i18n:translate="help_default_page">
+				<div class="formHelp">
+					<span tal_omit-tag="" i18n:translate="help_default_page"> 
 					Here you can see the current sub-content used as default page for this section.
 					If you provide both &quot;Current content layout&quot; and
 					&quot;Current default page&quot; values, the default page wins.
-				</div>
-				<div class="formHelp">
-					<strong i18n:translate="help_current_layout2">
+					</span><br/>		
+					<strong i18n:translate="help_warning">
 					Please, be sure of what you write below if you plan to change this value
 					or you will be no more able to see the current content.</strong>
 				</div>
 				<input id="default_page"
 				       name="default_page"
-					   tal:attributes="value view/default_page"
+					   size="50"
+					   tal:attributes="value values/default_page"
 					   />
 			</div>
 

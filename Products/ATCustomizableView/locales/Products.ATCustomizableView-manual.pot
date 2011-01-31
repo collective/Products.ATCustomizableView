@@ -17,8 +17,8 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: Products.ATCustomizableView\n"
 
-msgid "Customize the View menu"
+msgid "Customize the Display menu"
 msgstr ""
 
-msgid "Product for beeing able to customize the View menu"
+msgid "Product for beeing able to change some behaviour of the Display menu"
 msgstr ""
