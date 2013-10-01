@@ -20,12 +20,18 @@
            factory=".menu.DisplaySubMenuItem"
            provides="plone.app.contentmenu.interfaces.IContentMenuItem" />
 
-  <!-- Register the installation GenericSetup extension profile -->
   <genericsetup:registerProfile
       name="default"
       title="Customize the Display menu"
       directory="profiles/default"
       description="Product for beeing able to change some behaviour of the Display menu"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="Uninlstall Products.ATCustomizableView"
+      directory="profiles/uninstall"
+      description="Remove Products.ATCustomizableView from the site"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 

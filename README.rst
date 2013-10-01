@@ -46,8 +46,8 @@ Behaviour described above can be reach also developing additional content types.
 not very useful developing silly content type or marker interfaces only for obtaining additional
 layout.
 
-If you like more older versions of ATCustomizableView
------------------------------------------------------
+If you don't want any UI
+------------------------
 
 I got some (good) criticism about releases of ATCustomizableView that started to display Plone UI,
 even if those changes were in the TODO for a long time.
@@ -72,8 +72,5 @@ For Plone versions 3.2 or lower, remember the zcml section::
 TODO
 ====
 
-* Thinking about moving to the approach used for `redturtle.custommenu.factories`__, as soon as
-  the per-object menu customization will be moved out of the product.
-
-__ http://plone.org/products/redturtle.custommenu.factories
-
+* Is this working with Dexterity based content types? If not: can I make this works someway?
+* Tests...

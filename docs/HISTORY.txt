@@ -1,10 +1,14 @@
 Changes
 =======
 
-0.4.2 (Unreleased)
+0.5.0 (2013-10-01)
 ------------------
 
 * Added a way to handle view menu for default page in the folder
+  [keul]
+* Plone 4.3 compatibility
+  [keul]
+* Added an uninstall profile
   [keul]
 
 0.4.1 (2011-01-31)

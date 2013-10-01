@@ -2,7 +2,10 @@
 
 import zope.component
 
-from zope.app.publisher.interfaces.browser import IBrowserMenu
+try:
+    from zope.browsermenu.interfaces import IBrowserMenu
+except ImportError:
+    from zope.app.publisher.interfaces.browser import IBrowserMenu
 
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from Products.CMFCore.utils import getToolByName
