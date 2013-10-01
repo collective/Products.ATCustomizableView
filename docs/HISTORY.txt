@@ -1,6 +1,12 @@
 Changes
 =======
 
+0.4.2 (Unreleased)
+------------------
+
+* Added a way to handle view menu for default page in the folder
+  [keul]
+
 0.4.1 (2011-01-31)
 ------------------
 

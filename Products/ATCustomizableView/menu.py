@@ -19,11 +19,6 @@ from Products.ATCustomizableView.interfaces import ICustomViewMenuLayer
 class DisplayMenu(PloneDisplayMenu):
     implements(IDisplayMenu)
 
-    # Stolen from ploneview
-    def isFolderOrFolderDefaultPage(self, context, request):
-        context_state = getMultiAdapter((aq_inner(context), request), name=u'plone_context_state')
-        return context_state.is_structural_folder() or context_state.is_default_page()
-
     def getMenuItems(self, context, request):
         """Return menu item entries in a TAL-friendly form."""
         results = PloneDisplayMenu.getMenuItems(self, context, request)
@@ -31,9 +26,13 @@ class DisplayMenu(PloneDisplayMenu):
         if ICustomViewMenuLayer.providedBy(request):
     
             # First of all, get the real context of the menu
-            if IFolder.providedBy(context):
+            context_state = getMultiAdapter((aq_inner(context), request), name=u'plone_context_state')
+            is_folder = context_state.is_structural_folder()
+            is_folder_default_page = context_state.is_default_page()
+
+            if is_folder:
                 folder = context
-            elif self.isFolderOrFolderDefaultPage(context, request):
+            elif is_folder or is_folder_default_page:
                 folder = aq_parent(aq_inner(context))
             else:
                 # don't know how to handle this
@@ -49,6 +48,20 @@ class DisplayMenu(PloneDisplayMenu):
                          'extra'         : {'id': 'customizeViewMenu', 'separator': 'actionSeparator', 'class': ''},
                          'submenu'       : None,
                          })
+        
+                if is_folder_default_page:
+                    # give a way to customize view menu for default page in the folder
+                    results.append({ 'title' : _(u'label_customization_default_page', default=u'Customize menu (for default page)'),
+                             'description'   : _(u'help_customization_default_page',
+                                                 default=u'Freeze, change or add menu entries '
+                                                         u"for the element used as default view"),
+                             'action'        : context.absolute_url()+'/@@customize-viewmenu',
+                             'selected'      : False,
+                             'icon'          : None,
+                             'extra'         : {'id': 'customizeViewMenu', 'separator': '', 'class': ''},
+                             'submenu'       : None,
+                             })
+
         
         return results
 

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-01-31 10:42+0000\n"
+"POT-Creation-Date: 2013-10-01 16:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: keul <luca@keul.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,9 +55,14 @@ msgid "Save"
 msgstr "Salva"
 
 #. Default: "Freeze, change or add menu entries"
-#: ../menu.py:45
+#: ../menu.py:44
 msgid "help_customization"
 msgstr "Congela, cambia o aggiungi voci di menù"
+
+#. Default: "Freeze, change or add menu entries for the element used as default view"
+#: ../menu.py:55
+msgid "help_customization_default_page"
+msgstr "Congela, cambia o aggiungi voci di menù per l'elemento usato come vista predefinita"
 
 #. Default: "From this form you can change some behaviour of the \"Display\" menu for your site authors."
 #: ../browser/customize-viewmenu.pt:25
@@ -104,9 +109,14 @@ msgid "help_warning"
 msgstr "Per favore, sii sicuro di cosa scrivi qui sotto se hai intenzione di cambiarne il valore o non sarai più in grado di vedere il contenuto."
 
 #. Default: "Customize menu"
-#: ../menu.py:44
+#: ../menu.py:43
 msgid "label_customization"
 msgstr "Personalizza il menù"
+
+#. Default: "Customize menu (for default page)"
+#: ../menu.py:54
+msgid "label_customization_default_page"
+msgstr "Personalizza il menù (per l'elemento predefinito)"
 
 #. Default: "Customization of the \"Display\" menu"
 #: ../browser/customize-viewmenu.pt:14

@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.4.1'
+version = '0.4.2.dev0'
 
 setup(name='Products.ATCustomizableView',
       version=version,
