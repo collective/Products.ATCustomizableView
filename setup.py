@@ -7,7 +7,7 @@ version = '0.5.1.dev0'
 
 setup(name='Products.ATCustomizableView',
       version=version,
-      description='A Plone product that change the standard Plone behaviour of the "Display" menu',
+      description='A product that change the standard Plone behavior of the "Display" menu',
       long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
